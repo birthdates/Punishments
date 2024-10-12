@@ -132,8 +132,8 @@ class CoreDatabaseService : DatabaseService {
         }
     }
 
-    override fun getActivePunishment(address: String, punishmentType: PunishmentType): CompletableFuture<Punishment> {
-        val future = CompletableFuture<Punishment>()
+    override fun getActivePunishment(address: String, punishmentType: PunishmentType): CompletableFuture<Punishment?> {
+        val future = CompletableFuture<Punishment?>()
         Executors.IO.execute {
             dataSource.connection.use { connection ->
                 connection.prepareStatement("SELECT * FROM punishments WHERE address = ? AND punishmentType = ? AND (createdAt + duration > ? OR duration = -1) AND active = true ORDER BY duration DESC LIMIT 1")

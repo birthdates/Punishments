@@ -50,5 +50,5 @@ interface DatabaseService : Service {
      * @param punishmentType The type of punishment to get.
      * @return A future containing the punishment.
      */
-    fun getActivePunishment(address: String, punishmentType: PunishmentType): CompletableFuture<Punishment>
+    fun getActivePunishment(address: String, punishmentType: PunishmentType): CompletableFuture<Punishment?>
 }
