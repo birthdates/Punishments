@@ -64,7 +64,7 @@ class Format {
             if (formatted.isEmpty()) {
                 return "0 seconds"
             }
-            return formatted.toString()
+            return formatted.toString().removeSuffix(", ").trim()
         }
     }
 }
