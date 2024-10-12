@@ -1,0 +1,2 @@
+# Punishments
+A simple plugin that handles punishments for players in Minecraft. It includes muting, kicking, banning, blacklisted, and temporary punishments. View a player's punishments with `/history`

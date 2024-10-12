@@ -1,0 +1,20 @@
+disallowed-mute-commands: ["msg", "tell", "w", "whisper", "t", "pm", "r", "reply", "m", "me", "mute", "unmute", "ignore", "unignore"]
+database:
+  host: "localhost"
+  port: 3306
+  database: "minecraft"
+  username: "root"
+  password: "1234"
+messages:
+  ban-disconnected: "&cYou have been banned from this server.\nReason: %reason%\nTime:%duration%"
+  blacklist-disconnected: "&cYou have been blacklisted from this server.\nReason: %reason%"
+  kick-disconnected: "&cYou have been kicked from this server.\nReason: %reason%"
+  muted: "&cYou are muted for %duration%."
+  muted-command-use: "&cYou are muted and cannot use this command."
+  player-not-online: "&cThat player is not online."
+  punishment-broadcast: "&c%player% has been %verb% by %giver%.\nReason: %reason%\nTime: %duration%"
+  punishment-broadcast-kick: "&c%player% has been %verb% by %giver%.\nReason: %reason%"
+  unban-success: "&aYou have unbanned %player%."
+  unmute-success: "&aYou have unmuted %player%."
+  unblacklist-success: "&aYou have unblacklisted %player%."
+  punishment-removed-broadcast: "&a%player% has been %verb% by %revoker%."

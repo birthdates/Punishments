@@ -1,3 +1,6 @@
 name: Punishments
 author: birthdates
-version: {gitVer}
+# using gradle use the project version
+version: ${version}
+api-version: 1.13
+main: com.birthdates.punishments.PunishmentsPlugin

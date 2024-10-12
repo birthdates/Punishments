@@ -87,6 +87,8 @@ gradle-app.setting
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
+*.jar
+
 # Avoid ignore Gradle wrappper properties
 !gradle-wrapper.properties
 
