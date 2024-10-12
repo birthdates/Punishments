@@ -20,8 +20,8 @@ import org.bukkit.entity.Player
 @Register
 @Depends([DatabaseService::class, LanguageService::class])
 class CorePunishmentService : PunishmentService {
-    val databaseService: DatabaseService = Services.get(DatabaseService::class.java)
-    val languageService: LanguageService = Services.get(LanguageService::class.java)
+    val databaseService: DatabaseService = Services.fetch()
+    val languageService: LanguageService = Services.fetch()
 
     override fun addPunishment(playerName: String, punishment: Punishment) {
         Executors.IO.execute {

@@ -19,7 +19,8 @@ import java.util.UUID
 @CommandAlias("history|h")
 @CommandPermission("punishments.history")
 class HistoryCommand : BaseCommand() {
-    val databaseService = Services.get(DatabaseService::class.java)
+    val databaseService: DatabaseService = Services.fetch()
+    val menuService: MenuService = Services.fetch()
 
     @Default
     fun history(player: Player, @Name("player") targetName: String) {
@@ -41,7 +42,7 @@ class HistoryCommand : BaseCommand() {
 
             val menu = HistoryMenu(punishments, names)
             Bukkit.getScheduler().runTask(PunishmentsPlugin.getInstance(), Runnable {
-                Services.get(MenuService::class.java).openMenu(player, menu)
+                menuService.openMenu(player, menu)
             })
         }
     }

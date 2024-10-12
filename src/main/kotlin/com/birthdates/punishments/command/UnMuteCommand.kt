@@ -18,8 +18,8 @@ import org.bukkit.command.CommandSender
 @CommandAlias("unmute")
 @CommandPermission("punishments.unmute")
 class UnMuteCommand : BaseCommand() {
-    val databaseService = Services.get(DatabaseService::class.java)
-    val languageService = Services.get(LanguageService::class.java)
+    val databaseService: DatabaseService = Services.fetch()
+    val languageService: LanguageService = Services.fetch()
 
     @Default
     fun unmutePlayer(sender: CommandSender, @Name("player") targetName: String) {

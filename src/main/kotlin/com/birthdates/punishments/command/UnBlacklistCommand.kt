@@ -18,8 +18,8 @@ import org.bukkit.command.CommandSender
 @CommandAlias("unblacklist")
 @CommandPermission("punishments.unblacklist")
 class UnBlacklistCommand : BaseCommand() {
-    val databaseService = Services.get(DatabaseService::class.java)
-    val languageService = Services.get(LanguageService::class.java)
+    val databaseService: DatabaseService = Services.fetch()
+    val languageService: LanguageService = Services.fetch()
 
     @Default
     fun unblacklistPlayer(sender: CommandSender, @Name("player") targetName: String) {

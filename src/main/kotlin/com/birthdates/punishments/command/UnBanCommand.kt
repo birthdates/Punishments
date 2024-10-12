@@ -18,8 +18,8 @@ import org.bukkit.command.CommandSender
 @CommandAlias("unban")
 @CommandPermission("punishments.unban")
 class UnBanCommand : BaseCommand() {
-    val databaseService = Services.get(DatabaseService::class.java)
-    val languageService = Services.get(LanguageService::class.java)
+    val databaseService: DatabaseService = Services.fetch()
+    val languageService: LanguageService = Services.fetch()
 
     @Default
     fun unbanPlayer(sender: CommandSender, @Name("player") targetName: String) {
