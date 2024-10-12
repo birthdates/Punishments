@@ -46,7 +46,8 @@ class HistoryMenu {
                     "",
                     "${ChatColor.GOLD}Status: ${ChatColor.WHITE}${if (punishment.active) "Active" else "Inactive"}",
                     "${ChatColor.GOLD}Reason: ${ChatColor.WHITE}${punishment.reason}",
-                    "${ChatColor.GOLD}Duration: ${ChatColor.WHITE}${Format.formatDuration(punishment.duration)}",
+                    "${ChatColor.GOLD}Duration: ${ChatColor.WHITE}${Format.formatDuration(punishment.duration)} (${if (punishment.isNotExpired()) "${ChatColor.GREEN}ACTIVE" else "${ChatColor.RED}EXPIRED"}${ChatColor.WHITE})",
+                    "${ChatColor.GOLD}When: ${ChatColor.WHITE}${Format.formatDuration(System.currentTimeMillis()-punishment.createdAt)} ago",
                     "${ChatColor.GOLD}Issued by: ${ChatColor.WHITE}${
                         punishment.giver?.let {
                             names[it]
