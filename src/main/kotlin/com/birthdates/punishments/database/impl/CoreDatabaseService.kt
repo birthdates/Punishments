@@ -138,7 +138,7 @@ class CoreDatabaseService : DatabaseService {
         val future = CompletableFuture<Punishment>()
         Executors.IO.execute {
             dataSource.connection.use { connection ->
-                connection.prepareStatement("SELECT * FROM punishments WHERE address = ? AND punishmentType = ? AND (createdAt + duration > ? OR duration = -1) AND active = true ORDER BY duration DESC LIMIT 1")
+                connection.prepareStatement("SELECT * FROM punishments WHERE address = ? AND punishmentType = ? AND (createdAt + duration > ? OR duration = -1) AND active = true ORDER BY createdAt DESC LIMIT 1")
                     .use { statement ->
                         statement.setString(1, address)
                         statement.setString(2, punishmentType.name)
@@ -178,7 +178,7 @@ class CoreDatabaseService : DatabaseService {
 
         Executors.IO.execute {
             dataSource.connection.use { connection ->
-                connection.prepareStatement("SELECT * FROM punishments WHERE id = ? AND punishmentType IN (${types.joinToString { "?" }}) AND (createdAt + duration > ? OR duration = -1) AND active = true ORDER BY duration DESC LIMIT 1")
+                connection.prepareStatement("SELECT * FROM punishments WHERE id = ? AND punishmentType IN (${types.joinToString { "?" }}) AND (createdAt + duration > ? OR duration = -1) AND active = true ORDER BY createdAt DESC LIMIT 1")
                     .use { statement ->
                         statement.setString(1, id.toString())
                         types.forEachIndexed { index, type ->
